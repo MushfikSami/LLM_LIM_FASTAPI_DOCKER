@@ -1,0 +1,32 @@
+# 1. Security: NEVER copy secrets into the image
+.env
+*.env
+**/.env
+
+# 2. Virtual Environments: Docker installs its own dependencies
+venv/
+.venv/
+env/
+**/venv/
+**/.venv/
+
+# 3. Python Cache: Prevents cross-platform execution bugs
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# 4. Git History: Unnecessary bloat
+.git/
+.gitignore
+
+# 5. IDE Settings: Keep your personal editor configs local
+.vscode/
+.idea/
+
+# 6. Docker configuration: Doesn't need to be inside the container itself
+Dockerfile
+docker-compose.yml
+.dockerignore
