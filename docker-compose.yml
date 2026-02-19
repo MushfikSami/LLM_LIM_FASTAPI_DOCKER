@@ -1,0 +1,21 @@
+
+
+services:
+  backend:
+    build: ./backend
+    container_name: gemini_fastapi
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+
+  frontend:
+    build: ./frontend
+    container_name: gemini_streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      # Tells Streamlit to hit the backend container on the internal Docker network
+      - BACKEND_URL=http://backend:8080
+    depends_on:
+      - backend
