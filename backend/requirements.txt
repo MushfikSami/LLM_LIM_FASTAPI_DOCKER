@@ -3,3 +3,5 @@ uvicorn
 pydantic 
 google-generativeai 
 python-dotenv
+pydantic-settings 
+prometheus-fastapi-instrumentator
